@@ -1,12 +1,14 @@
 from distutils.core import setup, Extension
 from distutils.sysconfig import get_python_lib
 import os
+from scipy._build_utils import numpy_nodepr_api
 
 module = Extension('lwpr',
-                    include_dirs = ['../include', 
+                    include_dirs = ['../include',
                        os.path.join(get_python_lib(),'numpy','core','include')],
-                    libraries = ['lwpr'],    
-                    sources = ['lwprmodule.c'])
+                    libraries = ['lwpr'],
+                    sources = ['lwprmodule.c'],
+                    **numpy_nodepr_api)
 
 setup (name = 'LWPR Module',
        version = '1.1',

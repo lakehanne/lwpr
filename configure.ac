@@ -107,17 +107,17 @@ AC_ARG_ENABLE([threads],
    [AC_DEFINE([NUM_THREADS],[1],[Number of threads to use])]
 )
 
-AC_ARG_WITH([matlab], 
-   [AC_HELP_STRING([--with-matlab=<path to Matlab installation>],
-                  [Enables building MEX files and a special shared library liblwprmex.so])],
-   [SET_MATLAB]
-)
+#AC_ARG_WITH([matlab], 
+#   [AC_HELP_STRING([--with-matlab=<path to Matlab installation>],
+#                  [Enables building MEX files and a special shared library liblwprmex.so])],
+#   [SET_MATLAB]
+#)
 
-AC_ARG_WITH([octave], 
-   [AC_HELP_STRING([--with-octave=<path to Octave installation (must be >= 2.9.12) >],
-                  [Enables building Octave MEX files and a special shared library liblwproctave.so])],
-   [SET_OCTAVE]
-)
+#AC_ARG_WITH([octave], 
+#   [AC_HELP_STRING([--with-octave=<path to Octave installation (must be >= 2.9.12) >],
+#                  [Enables building Octave MEX files and a special shared library liblwproctave.so])],
+#   [SET_OCTAVE]
+#)
 
 AC_SUBST([MATLAB_PATH])
 AC_SUBST([OCTAVE_PATH])
