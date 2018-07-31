@@ -875,9 +875,10 @@ static PyMethodDef PyLWPR_methods[] = {
 };
 
 static PyTypeObject PyLWPR_Type = {
-    PyObject_HEAD_INIT(NULL)
-    0,                           /* ob_size */
-    "lwpr.LWPR",  /* tp_name */
+    // PyObject_HEAD_INIT(NULL)
+    PyVarObject_HEAD_INIT(&PyType_Type, 0)
+    // 0,                           /* ob_size */
+    "lwpr.LWPR",                  /* tp_name */
     sizeof(PyLWPR),              /* tp_basicsize */
     0,                           /* tp_itemsize */
     (destructor) PyLWPR_dealloc, /* tp_dealloc */
@@ -918,7 +919,9 @@ static PyTypeObject PyLWPR_Type = {
     0,                           /* tp_dictoffset */
     0,                           /* tp_init */
     0,                           /* tp_alloc */
-    PyLWPR_new                   /* tp_new */
+    PyLWPR_new,                   /* tp_new */
+    PyObject_GC_Del,                            /* tp_free */
+    0,                        /* tp_is_gc */
 };
 
 static PyMethodDef lwpr_methods[] = {{NULL}};
