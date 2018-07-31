@@ -5,16 +5,16 @@
 # It is necessary for linking the library.
 
 # The name that we can dlopen(3).
-dlname='liblwpr.1.dylib'
+dlname='liblwpr.so.1'
 
 # Names of this library.
-library_names='liblwpr.1.dylib liblwpr.dylib'
+library_names='liblwpr.so.1.0.2 liblwpr.so.1 liblwpr.so'
 
 # The name of the static archive.
 old_library='liblwpr.a'
 
 # Linker flags that can not go in dependency_libs.
-inherited_linker_flags=' '
+inherited_linker_flags=''
 
 # Libraries that this one depends upon.
 dependency_libs=' -lpthread -lm -lexpat'

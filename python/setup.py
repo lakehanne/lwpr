@@ -6,7 +6,7 @@ from scipy._build_utils import numpy_nodepr_api
 module = Extension('lwpr',
                     include_dirs = ['../include',
                        os.path.join(get_python_lib(),'numpy','core','include')],
-                    libraries = ['lwpr'],
+                    libraries = ['../build/lwpr'],
                     sources = ['lwprmodule.c'],
                     **numpy_nodepr_api)
 

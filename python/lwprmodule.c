@@ -33,7 +33,7 @@ typedef struct {
     double *extra_out2;
     double *extra_out3;
     double *extra_J;
-    PyType_Spec *ob_type;
+    PyType_Spec *ob_type;// = &PyType_Type;;
 } PyLWPR;
 
 static const char *TrueFalse[]={"False","True"};
@@ -42,7 +42,7 @@ static const char *GaussBiSq[]={"Gaussian","BiSquare"};
 static void PyLWPR_dealloc(PyLWPR* self) {
    lwpr_free_model(&self->model);
    free(self->extra_in);
-   self->ob_type = &PyType_Type;
+   // self->ob_type = &PyType_Type;
    /*initialize this field explicitly
      at the start of the module’s initialization function,
      before doing anything else */
@@ -877,8 +877,8 @@ static PyMethodDef PyLWPR_methods[] = {
 static PyTypeObject PyLWPR_Type = {
     PyObject_HEAD_INIT(NULL)
     0,                           /* ob_size */
-    "lwpr.LWPR",                 /* tp_name */
-    sizeof(PyLWPR)   ,           /* tp_basicsize */
+    "lwpr.LWPR",  /* tp_name */
+    sizeof(PyLWPR),              /* tp_basicsize */
     0,                           /* tp_itemsize */
     (destructor) PyLWPR_dealloc, /* tp_dealloc */
     0,                           /* tp_print */
