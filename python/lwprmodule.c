@@ -874,10 +874,9 @@ static PyMethodDef PyLWPR_methods[] = {
     {NULL}  /* Sentinel */
 };
 
+/*See this: https://github.com/python/cpython/blob/master/Objects/typeobject.c#L3540*/
 static PyTypeObject PyLWPR_Type = {
-    // PyObject_HEAD_INIT(NULL)
     PyVarObject_HEAD_INIT(&PyType_Type, 0)
-    // 0,                           /* ob_size */
     "lwpr.LWPR",                  /* tp_name */
     sizeof(PyLWPR),              /* tp_basicsize */
     0,                           /* tp_itemsize */
