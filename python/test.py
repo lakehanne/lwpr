@@ -1,5 +1,5 @@
-# from lwpr import LWPR
-import lwpr
+from lwpr import LWPR
+#import lwpr
 from numpy import *
 from random import *
 from math import *
